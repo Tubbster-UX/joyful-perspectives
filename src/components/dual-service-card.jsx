@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageStack = ({ topImage, bottomImage }) => {
   return (
-    <div className="relative inline-block max-w-full" style={{ height: 'auto' }}>
+    <div className="relative inline-block max-w-[full]" style={{ height: 'auto' }}>
       <img
         src={bottomImage}
         alt="Bottom"
@@ -21,7 +21,7 @@ const ImageStack = ({ topImage, bottomImage }) => {
 
 const DualServiceCard = () => {
   return (
-    <div className='p-10'>
+    <div className='md:pt-10 sm:pt-10'>
       <div className="p-10 flex justify-center items-center">
         <ImageStack
           topImage="ruby-nation.webp" // Replace with your image path

@@ -16,7 +16,7 @@ const ImageStack = ({ topImage, bottomImage }) => {
 
 const SingleServiceCard = () => {
   return (
-    <div className='p-10'>
+    <div>
       <div className="p-10 flex justify-center items-center">
         <ImageStack
           bottomImage="cameron.webp" // Replace with your image path
