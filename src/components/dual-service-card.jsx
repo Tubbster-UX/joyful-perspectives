@@ -21,7 +21,7 @@ const ImageStack = ({ topImage, bottomImage }) => {
 
 const DualServiceCard = () => {
   return (
-    <div className='md:pt-10 sm:pt-10'>
+    <div className='md:pt-10 pt-10'>
       <div className="p-10 flex justify-center items-center">
         <ImageStack
           topImage="ruby-nation.webp" // Replace with your image path
