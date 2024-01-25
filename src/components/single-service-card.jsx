@@ -7,7 +7,7 @@ const ImageStack = ({ topImage, bottomImage }) => {
       <img
         src={bottomImage}
         alt="Bottom"
-        className="w-full object-cover rounded-lg shadow-md"
+        className="lg:w-full w-[20rem] object-cover rounded-lg shadow-md"
         style={{ maxWidth: '466px', height: 'auto' }} // Maximum width for larger screens
       />
     </div>

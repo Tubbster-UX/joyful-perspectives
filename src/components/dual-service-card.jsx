@@ -1,27 +1,19 @@
 import React from 'react';
 
-
 const ImageStack = ({ topImage, bottomImage }) => {
   return (
     <div className="relative inline-block max-w-full" style={{ height: 'auto' }}>
       <img
         src={bottomImage}
         alt="Bottom"
-        className="w-full object-cover rounded-lg shadow-md"
+        className="lg:w-full w-[20rem] object-cover rounded-lg shadow-md"
         style={{ maxWidth: '466px', height: 'auto' }} // Maximum width for larger screens
       />
       <img
         src={topImage}
         alt="Top"
-        className="absolute rounded-lg shadow-md"
-        style={{
-          width: '75%', // Percentage of the bottom image's width
-          maxWidth: '340px', // Maximum width to ensure it doesn't get too large
-          top: '1rem', // Fixed top position
-          right: '-14rem', // Fixed left position
-          transform: 'translate(-50%, -50%)',
-          height: 'auto' // Height will scale automatically
-        }}
+        className="absolute rounded-lg shadow-md lg:w-[75%] w-[75%] right-[-7rem] max-w-[340px] top-[1rem] xl:right-[-14rem] lg:right-[-11rem] transform translate-x-[-50%] translate-y-[-50%]"
+
       />
     </div>
   );
