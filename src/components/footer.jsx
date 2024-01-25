@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <footer className="bg-cream font-Cormorant-Garamond text-black py-8">
             <div className="container flex flex-col items-center justify-center mx-auto h-full">
-                <h2 className="text-2xl mb-4">Joyful Perspectives</h2>
-                <p className="mb-4">joyfulperspectivesphoto@gmail.com</p>
+                <h2 className="text-5xl mb-4">Joyful Perspectives</h2>
+                <p className=" text-2xl mb-4">joyfulperspectivesphoto@gmail.com</p>
                 <div className="flex space-x-4">
                     <a href="https://www.instagram.com/your-instagram-account" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="text-2xl" />
