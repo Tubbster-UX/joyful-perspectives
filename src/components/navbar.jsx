@@ -41,15 +41,15 @@ const Navbar = () => {
     const currentPage = window.location.pathname; // Get the current page URL
 
     return (
-        <nav className={`font-Cormorant-Garamond lg:py-12 py-5 px-10 fixed top-0 w-full z-20 transition duration-300 ease-in-out ${isNavbarTransparent ? 'bg-transparent' : 'bg-cream'}`}>
+        <nav className={`font-Cormorant-Garamond lg:py-12 py-5 px-10 fixed top-0 w-full z-20 transition duration-300 ease-in-out ${isNavbarTransparent && currentPage === '/' ? 'bg-transparent' : 'bg-cream'}`}>
             <div className="container mx-auto flex gap-5 justify-between items-center">
-                <div className={`lg:text-4xl md:text-xl text-2xl font-light ${isNavbarTransparent ? 'text-white' : 'text-black'}`}><a href='/'>JOYFUL PERSPECTIVES</a></div>
+                <div className={`lg:text-4xl md:text-xl text-2xl font-light ${isNavbarTransparent && currentPage === '/' ? 'text-white' : 'text-black'}`}><a href='/'>JOYFUL PERSPECTIVES</a></div>
                 <div className="hidden lg:flex space-x-14">
                     {navLinks.map((link, index) => (
                         <a
                             key={index}
                             href={link.href}
-                            className={`text-2xl hover:text-gray-600 transition-all duration-300 ${isNavbarTransparent ? 'text-white' : 'text-black'} ${currentPage === link.href ? 'underline' : ''}`}
+                            className={`text-2xl hover:text-gray-600 transition-all duration-300 ${isNavbarTransparent && currentPage === '/' ? 'text-white' : 'text-black'} ${currentPage === link.href ? 'underline underline-offset-8 transition-all duration-300' : ''}`}
                         >
                             {link.title}
                         </a>
@@ -59,7 +59,7 @@ const Navbar = () => {
                     className="lg:hidden text-2xl hover:text-gray-600 transition-all duration-300"
                     onClick={toggleMenu}
                 >
-                    {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className={`h-6 w-6 ${isNavbarTransparent ? 'text-white' : 'text-black'}`} />}
+                    {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className={`h-6 w-6 ${isNavbarTransparent && currentPage === '/' ? 'text-white' : 'text-black'}`} />}
                 </button>
             </div>
             {isMenuOpen && (
@@ -84,5 +84,4 @@ const Navbar = () => {
         </nav>
     );
 };
-
 export default Navbar;

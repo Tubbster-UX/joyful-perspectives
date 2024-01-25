@@ -1,6 +1,11 @@
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import App from './App.jsx'
+import Services from './services.jsx'
+import About from './about.jsx'
+import Portfolio from './portfolio.jsx'
 import './index.css'
 import Navbar from './components/navbar.jsx'
 import Footer from './components/footer'
@@ -14,10 +19,19 @@ const client = new ApolloClient({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ApolloProvider client={client}>
-  <React.StrictMode>
-    <Navbar />
-    <App />
-    <Footer />
-  </React.StrictMode>
+    <React.StrictMode>
+      <Router>
+        <Navbar />
+        <div className="animate-slide-in font-Cormorant-Garamond bg-cream">
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </React.StrictMode>
   </ApolloProvider>,
 )
