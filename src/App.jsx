@@ -6,10 +6,31 @@ import 'swiper/css/pagination';
 import Header from './components/header'
 import Card from './components/card'
 import ReviewCard from './components/review-card'
-
-import { Pagination } from 'swiper/modules';
+import { useEffect, useState } from "react"
 
 function App() {
+
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth <= 992) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className='min-h-screen font-Cormorant-Garamond bg-cream'>
       <Header />
@@ -27,18 +48,15 @@ function App() {
           Contact Me
         </button>
       </div>
-      <div className='flex mb-32 mx-auto justify-center'>
+      <div className='flex lg:flex-row md:flex-col gap-4 flex-col mb-32 mx-auto justify-center'>
         <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
         <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
         <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
       </div>
       <div className='p-10'>
-  <div className="flex justify-between items-start"> {/* Align items to the start */}
-    <div className="flex flex-col justify-start">
       <h2 className='text-4xl mb-4'>KIND WORDS</h2>
-    </div>
     <Swiper
-      slidesPerView={'3'}
+      slidesPerView={slidesPerView}
       spaceBetween={10}
       // Add other Swiper props as needed
     >
@@ -49,7 +67,6 @@ function App() {
       <SwiperSlide><ReviewCard/></SwiperSlide>
       <SwiperSlide><ReviewCard/></SwiperSlide>
     </Swiper>
-  </div>
 </div>
 
     </div>
