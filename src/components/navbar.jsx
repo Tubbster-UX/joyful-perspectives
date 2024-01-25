@@ -39,7 +39,7 @@ const Navbar = () => {
 
     return (
         <nav className={`font-Cormorant-Garamond lg:py-12 py-5 px-10 fixed top-0 w-full z-20 transition duration-300 ease-in-out ${isNavbarTransparent ? 'bg-transparent' : 'bg-cream'}`}>
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="container mx-auto flex gap-5 justify-between items-center">
                 <div className={`lg:text-4xl md:text-xl text-2xl font-light ${isNavbarTransparent ? 'text-white' : 'text-black'}`}>JOYFUL PERSPECTIVES</div>
                 <div className="hidden lg:flex space-x-14">
                     {navLinks.map((link, index) => (
