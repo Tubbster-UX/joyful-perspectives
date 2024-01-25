@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from './components/header';
-import ServiceCard from './components/service-card';
+import DualServiceCard from './components/dual-service-card';
+import SingleServiceCard from './components/single-service-card';
 
 function Services() {
     return (
         <div className='bg-cream font-Cormorant-Garamond'>
-            <Header imageSrc="ruby-nation.webp" title1="Services"  />
-            <div className="flex md:flex-row container mx-auto flex-col gap-10 mt-10 justify-center">
-                <ServiceCard imagesrc="cameron.webp" title="Seniors" price="$100" />
-                <ServiceCard imagesrc="haley-robert.webp" title="Couples" price="$75" />
+            <Header imageSrc="ruby-nation.webp" title1="Services" />
+            <div className='flex flex-col lg:flex-row gap-4 justify-center p-16 items-center'>
+                <SingleServiceCard />
+                <DualServiceCard />
             </div>
         </div>
     );
