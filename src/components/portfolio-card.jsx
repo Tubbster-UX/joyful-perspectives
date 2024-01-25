@@ -3,7 +3,7 @@ import React from 'react';
 const PortfolioCard = ({ imageSrc, title }) => {
     return (
         <div className="flex justify-center">
-        <div className="relative group w-1/1">
+        <div className="relative group lg:w-1/1 w-96">
         <img
           className="w-full h-auto object-cover group-hover:opacity-75 transition duration-300 ease-in-out"
           src={imageSrc}

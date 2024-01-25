@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutSection = () => {
     return (
-        <div className="flex flex-col pt-40 lg:flex-row">
+        <div className="flex flex-col lg:pt-40 pt-10 lg:flex-row">
             <div className="lg:w-1/2 p-14">
                 <h1 className="text-5xl font mb-6">Who is the person behind the camera?</h1>
                 <p className="text-xl mb-4">
@@ -20,7 +20,7 @@ const AboutSection = () => {
             </div>
             <div className="lg:w-1/2">
                 {/* Replace with your image path */}
-                <img className="object-cover w-full h-64 lg:h-auto" src="/maddy.png" alt="About Me" />
+                <img className="object-cover w-full h-64 lg:h-auto aspect-video p-2" src="/maddy.png" alt="About Me" />
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const PhotoSection = () => {
   return (
-    <div className="py-12 px-4 bg-cream">
+    <div className="py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold mb-6">What kind of photos do I take?</h2>
         <p className="text-xl mb-4">

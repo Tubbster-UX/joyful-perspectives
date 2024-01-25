@@ -2,11 +2,11 @@ import React from 'react';
 
 const WhyIDoWhatIDo = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-gray-100">
+    <div className="flex flex-col lg:flex-row items-center">
       {/* Image Section */}
       <div className="lg:w-1/2">
         {/* Replace with your image path */}
-        <img className="object-cover w-full h-32 aspect-video lg:h-auto" src="/hand-holding.webp" alt="Unique Beauty" />
+        <img className="object-cover w-full h-64 lg:h-auto aspect-video" src="/hand-holding.webp" alt="Unique Beauty" />
       </div>
       
       {/* Text Section */}

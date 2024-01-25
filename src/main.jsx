@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Services from './services.jsx'
 import About from './about.jsx'
 import Portfolio from './portfolio.jsx'
+import ContactMe from './contactme.jsx'
 import './index.css'
 import Navbar from './components/navbar.jsx'
 import Footer from './components/footer'
@@ -22,12 +23,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
       <Router>
         <Navbar />
-        <div className="animate-slide-in font-Cormorant-Garamond bg-cream">
+        <div className="animate-slide-in font-Cormorant-Garamond min-h-screen bg-cream">
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<ContactMe />} />
         </Routes>
         </div>
         <Footer />
