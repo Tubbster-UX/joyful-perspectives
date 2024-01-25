@@ -64,7 +64,7 @@ const Navbar = () => {
                         >
                             <XMarkIcon className="h-6 w-6" />
                         </button>
-                        <ul className="text-2xl space-y-6">
+                        <ul className="text-2xl text-center space-y-6">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
                                     <a href={link.href}>{link.title}</a>
