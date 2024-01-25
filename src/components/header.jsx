@@ -13,7 +13,7 @@ const Header = () => {
   {/* Ensure the text is on top of the overlay */}
   <div className="text-center text-white z-10">
     <p className="text-2xl italic font-light mb-2">love the process</p>
-    <h1 className="text-6xl font-bold">JOYFUL PERSPECTIVES</h1>
+    <h1 className="md:text-6xl text-4xl font-bold">JOYFUL PERSPECTIVES</h1>
     <p className="text-2xl italic font-light mt-2">love the product</p>
   </div>
 </div>
