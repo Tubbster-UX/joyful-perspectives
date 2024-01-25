@@ -7,8 +7,12 @@ import Header from './components/header'
 import Card from './components/card'
 import ReviewCard from './components/review-card'
 import { useEffect, useState } from "react"
+import { useQuery } from '@apollo/client';
+import GET_REVIEWCARDS_QUERY from './components/review-card-query';
+import ContactForm from './components/contact-me';
 
 function App() {
+  const { data } = useQuery(GET_REVIEWCARDS_QUERY);
 
   const [slidesPerView, setSlidesPerView] = useState(3);
 
@@ -49,26 +53,22 @@ function App() {
         </button>
       </div>
       <div className='flex lg:flex-row md:flex-col gap-4 flex-col mb-32 mx-auto justify-center'>
-        <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
-        <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
-        <Card imageSrc="ruby-nation.webp" title="Couple Photos" buttonText="View Portfolio"></Card>
+        <Card />
       </div>
       <div className='p-10'>
-      <h2 className='text-4xl mb-4'>KIND WORDS</h2>
-    <Swiper
-      slidesPerView={slidesPerView}
-      spaceBetween={10}
-      // Add other Swiper props as needed
-    >
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-      <SwiperSlide><ReviewCard/></SwiperSlide>
-    </Swiper>
-</div>
-
+        <h2 className='text-4xl mb-4'>KIND WORDS</h2>
+        <Swiper
+          slidesPerView={slidesPerView}
+          spaceBetween={10}
+        >
+          {data && data.reviewCards.map((reviewCard) => (
+            <SwiperSlide key={reviewCard.id}>
+              <ReviewCard data={reviewCard} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <ContactForm />
     </div>
   )
 }

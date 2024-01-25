@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -30,20 +31,26 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { title: 'Home', href: '#' },
-        { title: 'Services', href: '#' },
-        { title: 'About', href: '#' },
-        { title: 'Portfolio', href: '#' },
-        { title: 'Contact', href: '#' },
+        { title: 'Home', href: '/' },
+        { title: 'Services', href: '/services' },
+        { title: 'About', href: '/about' },
+        { title: 'Portfolio', href: '/portfolio' },
+        { title: 'Contact', href: '/contact' },
     ];
+
+    const currentPage = window.location.pathname; // Get the current page URL
 
     return (
         <nav className={`font-Cormorant-Garamond lg:py-12 py-5 px-10 fixed top-0 w-full z-20 transition duration-300 ease-in-out ${isNavbarTransparent ? 'bg-transparent' : 'bg-cream'}`}>
             <div className="container mx-auto flex gap-5 justify-between items-center">
-                <div className={`lg:text-4xl md:text-xl text-2xl font-light ${isNavbarTransparent ? 'text-white' : 'text-black'}`}>JOYFUL PERSPECTIVES</div>
+                <div className={`lg:text-4xl md:text-xl text-2xl font-light ${isNavbarTransparent ? 'text-white' : 'text-black'}`}><a href='/'>JOYFUL PERSPECTIVES</a></div>
                 <div className="hidden lg:flex space-x-14">
                     {navLinks.map((link, index) => (
-                        <a key={index} href={link.href} className={`text-2xl hover:text-gray-600 transition-all duration-300 ${isNavbarTransparent ? 'text-white' : 'text-black'}`}>
+                        <a
+                            key={index}
+                            href={link.href}
+                            className={`text-2xl hover:text-gray-600 transition-all duration-300 ${isNavbarTransparent ? 'text-white' : 'text-black'} ${currentPage === link.href ? 'underline' : ''}`}
+                        >
                             {link.title}
                         </a>
                     ))}
@@ -67,7 +74,7 @@ const Navbar = () => {
                         <ul className="text-2xl text-center space-y-6">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <a href={link.href}>{link.title}</a>
+                                    <a href={link.href} className={`${currentPage === link.href ? 'underline' : ''}`}>{link.title}</a>
                                 </li>
                             ))}
                         </ul>
